@@ -3,7 +3,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     fetch(message.url, {
       method: "GET",
       mode: "cors",
-      redirect: "follow"
+      redirect: "manual"  // This is the key change - prevents automatic redirect following
     })
       .then(res => sendResponse({ status: res.status }))
       .catch(() => sendResponse({ status: 0 }));

@@ -1,17 +1,52 @@
+/* Base styles for highlighted links */
 .link-highlighted {
-  position: relative;
+  position: relative !important;
 }
 
+/* Status code badge styling */
 .status-code-box {
-  position: absolute;
-  top: -8px;
-  right: -8px;
+  position: absolute !important;
+  top: -10px !important;
+  right: -10px !important;
   background-color: #fff;
   color: #000;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: bold;
   border: 1px solid #ccc;
   border-radius: 4px;
-  padding: 2px 5px;
-  z-index: 9999;
+  padding: 3px 6px;
+  z-index: 9999 !important;
+  min-width: 25px;
+  text-align: center;
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* Special styling for external links */
+.status-code-box.external-link {
+  background-color: #0066cc;
+  color: white;
+  border: 1px solid #004499;
+  font-weight: bold;
+}
+
+/* Subtle visual distinction between internal and external */
+.external-link {
+  box-shadow: 0 0 3px rgba(0, 102, 204, 0.5) !important;
+}
+
+.internal-link {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effects for better UX */
+.link-highlighted:hover .status-code-box {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+/* Ensure badges don't interfere with page layout */
+.status-code-box {
+  pointer-events: none;
+  user-select: none;
 }
